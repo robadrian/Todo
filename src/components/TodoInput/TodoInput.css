@@ -1,0 +1,42 @@
+form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    background-color: rgb(211, 201, 201);
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+input {
+    color: white;
+    background-color: rgb(211, 201, 201);
+    font-size: 1.5rem;
+    border-style: none;
+    outline: none;
+    border-bottom: 2px solid black;
+}
+
+.addIcon {
+    width: 2rem;
+    height: 2rem;
+}
+
+.addIcon:hover {
+    cursor: pointer;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: white;
+  }
