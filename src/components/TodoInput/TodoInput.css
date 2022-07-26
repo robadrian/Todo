@@ -4,7 +4,7 @@ form {
     justify-content: space-around;
     padding: 1rem;
     margin-top: 2rem;
-    width: 70%;
+    width: 80%;
     margin-right: auto;
     margin-left: auto;
     border-radius: 1rem;
@@ -12,8 +12,9 @@ form {
 
 input {
     color: black;
-    font-size: 1.2rem;
     border-style: none;
+    width: 80%;
+    font-size: 1rem;
     outline: none;
     border-bottom: 2px solid black;
 }
