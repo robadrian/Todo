@@ -1,0 +1,9 @@
+.TodoCard {
+    display: flex;
+    border: 2px black solid;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 2rem auto;
+    padding: 1rem;
+}

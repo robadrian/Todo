@@ -1,0 +1,28 @@
+.Todo {
+    font-size: 1rem;
+    margin-right: 1.5rem;
+}
+.TodoDone {
+    margin-right: 1.5rem;
+    text-decoration: line-through;
+}
+
+.icons {
+    display: flex;
+}
+
+.icon {
+    width: 2rem;
+    height: 2rem;
+    transition: all .2s;
+}
+
+.icon:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+}
+
+.icon:focus {
+    cursor: pointer;
+    transform: translateY(-2px);
+}
