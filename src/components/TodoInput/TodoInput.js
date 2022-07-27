@@ -1,13 +1,21 @@
 import React from "react";
 import './TodoInput.css'
 import { IoIosAddCircleOutline } from "react-icons/io";
+import { useRef } from "react";
 
+const TodoInput = (props) => {
+    
+    const ref = useRef(null)
 
-const TodoInput = () => {
+    function submitHandler (){
+        props.newArray();
+        ref.current.value ='';
+    }
+
     return (
         <form>
-            <input placeholder="New Todo"/>
-            <IoIosAddCircleOutline className="addIcon" />
+            <input ref={ref} placeholder="New Todo" onChange={props.onChangeHandler}/>
+            <IoIosAddCircleOutline className="addIcon" onClick={submitHandler}/>
         </form>
     )
 }
