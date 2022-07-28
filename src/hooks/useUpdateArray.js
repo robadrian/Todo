@@ -12,8 +12,12 @@ export default function useUpdateArray() {
     }
 
     function newArray () {
-        setArray(prevArray => {
-            return [...prevArray, todo]})
+        if (input.length < 4) {
+            alert('Please write atleast 4 characters');
+        } else {
+            setArray(prevArray => {
+                return [...prevArray, todo]})
+        }
     }
 
     function deleteArray (index) {
@@ -21,10 +25,11 @@ export default function useUpdateArray() {
         setArray([...delArr]);
     }
 
-    function edit (id, index, editedInput) {
+    function edit (id) {
+        const index = [...array].findIndex(todo => todo.id === id);
         const editedTodo = {
             id: id, 
-            input:editedInput
+            input:input
         }
         array[index] = editedTodo;
         const newArray = [...array];

@@ -1,20 +1,17 @@
 import React from "react";
 import { HiOutlineClipboardCopy } from "react-icons/hi";
 import './TodoEdit.css';
-import useEditedInput from "../../../hooks/useEditedInput";
 
 const TodoEdit = (props) => {
 
-const [editedInput, onChangeHandler] = useEditedInput();
-
 const todoEdited = () => {
     props.switch();
-    props.edit(props.id, props.index, editedInput);
+    props.edit(props.id);
 }
 
  return (
     <>
-    <input className="editInput" placeholder={props.todo} onChange={onChangeHandler}/>
+    <input className="editInput" placeholder={props.todo} onChange={props.onChange}/>
     <div>
     <HiOutlineClipboardCopy className="icon" onClick={todoEdited}/>
     </div>
