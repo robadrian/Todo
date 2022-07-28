@@ -1,18 +1,16 @@
 import './App.css';
 import TodoInput from './components/TodoInput/TodoInput';
 import TodoCard from './components/TodoCard/TodoCard';
-import useUpdateArray from './hooks/useUpdateArray';
+import useListUpdate from './hooks/useListUpdate';
 
 function App() { 
 
-  const [array, newArray, edit, deleteArray, onChangeHandler] = useUpdateArray();
+  const [todosList, addToList, editItem, deleteItem] = useListUpdate();
 
   return (
     <div className="App">
-      <TodoInput onChangeHandler={onChangeHandler} newArray={newArray}/>     
-      {array.map((item,index) => {
-       return <TodoCard todo={item.input} key={item.id} id={item.id} delete={deleteArray} index={index} onChange={onChangeHandler} edit={edit}/>
-      } )}
+      <TodoInput addToList={addToList} />
+      {todosList.map(todo => <TodoCard key={(Math.random()*1000).toFixed} id={todo.id} todo={todo.input} edit={editItem} delete={deleteItem}/>)}
     </div>
   );
 }

@@ -1,23 +1,24 @@
 import React from "react";
 import './TodoFinal.css'
-import { IoIosTrash, IoMdCheckmark, IoMdCreate } from "react-icons/io";
-import useSwitch from "../../../hooks/useSwitch";
+import { IoIosTrash, IoMdCheckmark, IoMdCreate, IoIosArrowForward } from "react-icons/io";
+import useToggle from "../../../hooks/useToggle";
 
 const TodoFinal = (props) => {
 
-    const [value, switchValue] = useSwitch()
+    const [completed, setToCompleted] = useToggle();
 
-    const deleteHandler = () => {
-        props.delete(props.index);
+    const onClickHandler = () => {
+        props.delete(props.id);
     }
 
     return (
         <>
-        <p className={value ? "Todo" : "TodoDone"}>{props.todo}</p>
+        <p className={!completed ? "Todo" : "TodoDone"}>{props.todo}</p>
         <div className="icons">
-            { value && <IoMdCheckmark className="icon" onClick={switchValue}/> }
-            { value && <IoMdCreate className="icon" onClick={props.switch}/> }
-            <IoIosTrash className="icon" onClick={deleteHandler}/>
+            {!completed && <IoMdCheckmark className="icon" onClick={setToCompleted}/> }
+            {!completed && <IoMdCreate className="icon" onClick={props.isEditing}/>} 
+            {completed && <IoIosTrash className="icon" onClick={onClickHandler} /> }
+            {completed && <IoIosArrowForward className="icon" onClick={setToCompleted}/> }
         </div>
         </>
     )
