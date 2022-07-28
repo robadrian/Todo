@@ -11,7 +11,7 @@ const TodoCard = (props) => {
     return (
         <div className="TodoCard">
             { value && <TodoFinal todo={props.todo} switch={switchValue} delete={props.delete} index={props.index}/> }
-            { !value && <TodoEdit todo={props.todo} switch={switchValue} index={props.index} onChange={props.onChange} edit={props.edit}/> }
+            { !value && <TodoEdit todo={props.todo} index={props.index} id={props.id} switch={switchValue} onChange={props.onChange} edit={props.edit}/> }
         </div>
     )
 }

@@ -21,6 +21,16 @@ export default function useUpdateArray() {
         setArray([...delArr]);
     }
 
+    function edit (id, index, editedInput) {
+        const editedTodo = {
+            id: id, 
+            input:editedInput
+        }
+        array[index] = editedTodo;
+        const newArray = [...array];
+        setArray(newArray);      
+    }
 
-    return [array, newArray, deleteArray, onChangeHandler]
+
+    return [array, newArray, edit, deleteArray, onChangeHandler]
 }
