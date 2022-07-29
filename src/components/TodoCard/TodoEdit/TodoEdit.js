@@ -8,7 +8,6 @@ const TodoEdit = (props) => {
 
 const [editedTodo, setEditedTodo] = useInput();
 
-
 const onClickHanlder = () => {
    if (editedTodo.length > 5) {
       props.edit(props.id, editedTodo);
@@ -23,7 +22,7 @@ const back = () => {
 
  return (
     <>
-    <input className="editInput"  placeholder={props.todo} onChange={setEditedTodo}/>
+    <input className="editInput"  type="text" defaultValue={props.todo} onChange={setEditedTodo}/>
     <HiOutlineClipboardCopy className="icon" onClick={onClickHanlder}/>
     <IoIosArrowForward className="icon" onClick={back}/>
     </>
