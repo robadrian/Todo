@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <TodoInput addToList={addToList} />
-      {todosList.map(todo => <TodoCard key={(Math.random()*1000).toFixed} id={todo.id} todo={todo.input} edit={editItem} delete={deleteItem}/>)}
+      {todosList.map(todo => <TodoCard key={(Math.random()*100000)} id={todo.id} todo={todo.input} edit={editItem} delete={deleteItem}/>)}
     </div>
   );
 }

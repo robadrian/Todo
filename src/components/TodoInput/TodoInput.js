@@ -8,11 +8,11 @@ const TodoInput = (props) => {
     const [todo, setTodo, clear] = useInput();
     
     const onClickHandler = () => {
-        if(todo.length > 7) {
+        if(todo.length > 5) {
             props.addToList(todo);
             clear('');
         } else {
-            alert('Please write more than 7 Characters')
+            alert('Please write more than 5 Characters')
         }
         
     }

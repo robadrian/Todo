@@ -6,7 +6,7 @@ export default function useListUpdate() {
 
     const addToList = (value) => {
         const listObject = {
-            id: (Math.random() *1000).toFixed,
+            id: (Math.random() *1000),
             input: value
         }
 
@@ -16,7 +16,7 @@ export default function useListUpdate() {
     const editItem = (id, value) => {
         const index = list.findIndex(item => item.id === id);
         const editedListObject = {
-            id: id, 
+            id: (Math.random()*10000), 
             input: value
         }
         list[index] = editedListObject;
@@ -25,7 +25,8 @@ export default function useListUpdate() {
     }
 
     const deleteItem = (id) => {
-        const newArray = list.filter(item => item.id !== id);
+        const index = list.findIndex(item => item.id === id)
+        const newArray = list.filter((item, i) => i !== index);
         setList([...newArray]);
     }
 
