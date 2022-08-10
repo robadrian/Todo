@@ -4,7 +4,8 @@ import TodoCard from "./components/TodoCard/TodoCard";
 import useListUpdate from "./hooks/useListUpdate";
 
 function App() {
-  const [todosList, addToList, editItem, deleteItem] = useListUpdate();
+  const [todosList, addToList, editItem, isEditing, deleteItem] =
+    useListUpdate();
 
   return (
     <div className="App">
@@ -17,6 +18,8 @@ function App() {
           edit={editItem}
           delete={deleteItem}
           date={todo.date}
+          editing={todo.isEditing}
+          isEditing={isEditing}
         />
       ))}
     </div>

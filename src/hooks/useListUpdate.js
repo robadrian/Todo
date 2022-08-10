@@ -35,8 +35,32 @@ export default function useListUpdate() {
       id: Math.random() * 1000,
       input: value,
       date: formattedDate,
+      isEditing: false,
     };
     setList((prevList) => [...prevList, listObject]);
+  };
+
+  const isEditing = (id, value) => {
+    const nowDate = new Date();
+    const formattedDate = `Last Updated: ${nowDate.toLocaleString("uk-UK", {
+      hour12: false,
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+    })}`;
+    const index = list.findIndex((item) => item.id === id);
+    const editedListObject = {
+      id: Math.random() * 10000,
+      input: value,
+      date: formattedDate,
+      isEditing: true,
+    };
+    list[index] = editedListObject;
+    const newList = [...list];
+    setList(newList);
   };
 
   const editItem = (id, value) => {
@@ -55,6 +79,7 @@ export default function useListUpdate() {
       id: Math.random() * 10000,
       input: value,
       date: formattedDate,
+      isEditing: false,
     };
     list[index] = editedListObject;
     const newList = [...list];
@@ -67,5 +92,5 @@ export default function useListUpdate() {
     setList([...newArray]);
   };
 
-  return [list, addToList, editItem, deleteItem];
+  return [list, addToList, editItem, isEditing, deleteItem];
 }

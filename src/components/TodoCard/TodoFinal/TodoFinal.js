@@ -10,6 +10,10 @@ import useToggle from "../../../hooks/useToggle";
 const TodoFinal = (props) => {
   const [completed, setToCompleted] = useToggle();
 
+  const isEditingHandler = () => {
+    props.isEditing(props.id, props.todo);
+  };
+
   const onClickHandler = () => {
     props.delete(props.id);
   };
@@ -25,7 +29,7 @@ const TodoFinal = (props) => {
           <IoMdCheckmark className="icon check" onClick={setToCompleted} />
         )}
         {!completed && (
-          <IoMdCreate className="icon pencil" onClick={props.isEditing} />
+          <IoMdCreate className="icon pencil" onClick={isEditingHandler} />
         )}
         {completed && (
           <IoIosTrash className="icon delete" onClick={onClickHandler} />
