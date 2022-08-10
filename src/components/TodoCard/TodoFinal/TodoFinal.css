@@ -1,27 +1,38 @@
 .Todo {
-    font-size: 1rem;
-    margin-right: 1.5rem;
+  font-size: 1rem;
+  margin-right: 1.5rem;
 }
 .TodoDone {
-    margin-right: 1.5rem;
-    text-decoration: line-through;
+  margin-right: 1.5rem;
+  text-decoration: line-through;
 }
 
 .icons {
-    display: flex;
+  display: flex;
+  width: 20%;
+  justify-content: space-between;
 }
 
 .icon {
-    width: 2rem;
-    height: 2rem;
+  width: 2rem;
+  height: 2rem;
 }
 
 .icon:hover {
-    cursor: pointer;
-    transform: translateY(-2px);
+  cursor: pointer;
+  transform: translateY(-2px);
 }
 
 .icon:focus {
-    cursor: pointer;
-    transform: translateY(-2px);
+  cursor: pointer;
+  transform: translateY(-2px);
+}
+
+.date {
+  font-size: 10px;
+  color: gray;
+}
+
+.card {
+  text-align: center;
 }
