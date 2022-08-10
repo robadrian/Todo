@@ -1,11 +1,11 @@
 .icon {
-  width: 2rem;
-  height: 2rem;
+    width: 2rem;
+    height: 2rem;
 }
 
 .editInput {
-  text-align: center;
-  font-size: 1rem;
-  padding: 1rem;
-  border: none;
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 0.98rem;
+    border: none;
 }

@@ -9,8 +9,8 @@ const TodoCard = (props) => {
     const [edited, isEditing] = useToggle();
 
     return (
-        <div className={`TodoCard`}>
-            { !edited && <TodoFinal isEditing={isEditing} todo={props.todo} id={props.id} delete={props.delete} date={props.date}/> } 
+        <div className="TodoCard">
+            { !edited && <TodoFinal isEditing={isEditing} todo={props.todo} id={props.id} delete={props.delete}/> } 
             { edited && <TodoEdit isEditing={isEditing} todo={props.todo} edit={props.edit} id={props.id}/> } 
         </div>
     )

@@ -1,71 +1,35 @@
-import { useEffect, useState } from "react";
-import useLocalStorage from "./useLocalStorage";
+import { useState } from "react";
 
 export default function useListUpdate() {
-  const [list, setList] = useState([]);
-  const save = useLocalStorage();
 
-  useEffect(() => {
-    if (list.length > 0) {
-      save("todos", JSON.stringify([...list]));
-    } else return;
-  }, [save, list]);
+    const [list, setList] = useState([]);
 
-  useEffect(() => {
-    const savedList = JSON.parse(localStorage.getItem("todos"));
-    if (savedList) {
-      setList(savedList);
-    } else {
-      return;
+    const addToList = (value) => {
+        const listObject = {
+            id: (Math.random() *1000),
+            input: value
+        }
+
+        setList(prevList => [...prevList, listObject])
     }
-  }, []);
 
-  const addToList = (value) => {
-    const nowDate = new Date();
-    const formattedDate = `Last Updated: ${nowDate.toLocaleString("uk-UK", {
-      hour12: false,
-      year: "numeric",
-      month: "2-digit",
-      day: "2-digit",
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit",
-    })}`;
-    const listObject = {
-      id: Math.random() * 1000,
-      input: value,
-      date: formattedDate,
-    };
-    setList((prevList) => [...prevList, listObject]);
-  };
+    const editItem = (id, value) => {
+        const index = list.findIndex(item => item.id === id);
+        const editedListObject = {
+            id: (Math.random()*10000), 
+            input: value
+        }
+        list[index] = editedListObject;
+        const newList = [...list]
+        setList(newList)
+    }
 
-  const editItem = (id, value) => {
-    const nowDate = new Date();
-    const formattedDate = `Last Updated: ${nowDate.toLocaleString("uk-UK", {
-      hour12: false,
-      year: "numeric",
-      month: "2-digit",
-      day: "2-digit",
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit",
-    })}`;
-    const index = list.findIndex((item) => item.id === id);
-    const editedListObject = {
-      id: Math.random() * 10000,
-      input: value,
-      date: formattedDate,
-    };
-    list[index] = editedListObject;
-    const newList = [...list];
-    setList(newList);
-  };
+    const deleteItem = (id) => {
+        const index = list.findIndex(item => item.id === id)
+        const newArray = list.filter((item, i) => i !== index);
+        setList([...newArray]);
+    }
 
-  const deleteItem = (id) => {
-    const index = list.findIndex((item) => item.id === id);
-    const newArray = list.filter((item, i) => i !== index);
-    setList([...newArray]);
-  };
+    return [list, addToList, editItem, deleteItem]
+} 
 
-  return [list, addToList, editItem, deleteItem];
-}

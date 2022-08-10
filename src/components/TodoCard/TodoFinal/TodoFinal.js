@@ -1,3 +1,4 @@
+import React from "react";
 import './TodoFinal.css'
 import { IoIosTrash, IoMdCheckmark, IoMdCreate, IoIosArrowForward } from "react-icons/io";
 import useToggle from "../../../hooks/useToggle";
@@ -12,10 +13,7 @@ const TodoFinal = (props) => {
 
     return (
         <>
-        <span className='card'>
-            <p className={!completed ? "Todo" : `TodoDone`}>{props.todo}</p>
-            <p className='date'>{props.date}</p>
-        </span>
+        <p className={!completed ? "Todo" : "TodoDone"}>{props.todo}</p>
         <div className="icons">
             {!completed && <IoMdCheckmark className="icon" onClick={setToCompleted}/> }
             {!completed && <IoMdCreate className="icon" onClick={props.isEditing}/>} 
