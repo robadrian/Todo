@@ -4,11 +4,12 @@ import "./TodoEdit.css";
 import useInput from "../../../hooks/useInput";
 
 const TodoEdit = (props) => {
-  const [editedTodo, setEditedTodo] = useInput(props.todo);
+  const [editedTodo, setEditedTodo, clear] = useInput(props.todo);
 
   const onClickHandler = () => {
     if (editedTodo.length >= 5) {
       props.edit(props.id, editedTodo);
+      clear("");
     } else {
       alert("You need to write more than or equal to 5 characters");
     }

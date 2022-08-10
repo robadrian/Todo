@@ -90,6 +90,9 @@ export default function useListUpdate() {
     const index = list.findIndex((item) => item.id === id);
     const newArray = list.filter((item, i) => i !== index);
     setList([...newArray]);
+    if (newArray.length === 0) {
+      localStorage.removeItem("todos");
+    }
   };
 
   return [list, addToList, editItem, isEditing, deleteItem];
