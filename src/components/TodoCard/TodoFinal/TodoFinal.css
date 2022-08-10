@@ -16,16 +16,17 @@
 .icon {
   width: 2rem;
   height: 2rem;
+  transition: all 0.2s;
 }
 
 .icon:hover {
   cursor: pointer;
-  transform: translateY(-2px);
+  transform: translateY(-5px);
 }
 
 .icon:focus {
   cursor: pointer;
-  transform: translateY(-2px);
+  transform: translateY(-5px);
 }
 
 .date {
@@ -35,4 +36,29 @@
 
 .card {
   text-align: center;
+}
+.check {
+  color: green;
+}
+.delete {
+  color: red;
+}
+
+.arrow:hover {
+  cursor: pointer;
+  transform: translateX(5px);
+}
+
+.arrow:focus {
+  cursor: pointer;
+  transform: translateX(5px);
+}
+
+.pencil {
+  color: yellowgreen;
+}
+
+.pencil:hover {
+  cursor: pointer;
+  transform: rotate(-35deg);
 }

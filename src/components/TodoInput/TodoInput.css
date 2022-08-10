@@ -1,47 +1,55 @@
 form {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 1rem;
-    margin-top: 2rem;
-    width: 80%;
-    margin-right: auto;
-    margin-left: auto;
-    border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  margin-top: 2rem;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 1rem;
 }
 
 input {
-    color: black;
-    border-style: none;
-    width: 80%;
-    font-size: 1rem;
-    outline: none;
-    border-bottom: 2px solid black;
+  color: black;
+  border-style: none;
+  width: 50%;
+  font-size: 1rem;
+  outline: none;
+  border-bottom: 2px solid black;
 }
 
 .addIcon {
-    width: 2rem;
-    height: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  transition: all 0.2s;
 }
 
 .addIcon:hover {
-    cursor: pointer;
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: black;
-    opacity: 1; /* Firefox */
-  }
-  
-  :-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: black;
-  }
-  
-  ::-ms-input-placeholder { /* Microsoft Edge */
-    color: black;
-  }
-  button {
-    background: none;
-    border: none;
-  }
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: black;
+  opacity: 0.5; /* Firefox */
+}
 
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: black;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: black;
+}
+button {
+  background: none;
+  border: none;
+  width: 20px;
+  height: 20px;
+  margin-left: 1rem;
+}
